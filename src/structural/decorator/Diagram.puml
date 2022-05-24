@@ -1,0 +1,34 @@
+@startuml
+class DecoratorRunner {
+    run() : void
+}
+
+class Character {
+    name : String
+    type : String
+    strength : Integer
+    speed : Integer
+    printCharacterSummary() : void
+}
+
+abstract class PlayerDecorator {
+    character : Character
+    printPlayerSummary() : void
+}
+
+class ArmedPlayer {
+    wapons : List<String>
+    printPlayerSummary() : void
+}
+
+class MedicalPlayer {
+    equipments : List<String>
+    printPlayerSummary() : void
+}
+
+DecoratorRunner --> PlayerDecorator
+Character <. PlayerDecorator : Use
+PlayerDecorator <|-- ArmedPlayer : Extends
+PlayerDecorator <|-- MedicalPlayer : Extends
+
+@enduml

@@ -1,0 +1,34 @@
+@startuml
+
+class Window {
+    String id
+    open() : void
+    close() : void
+}
+
+class Activity {
+    execute() : void
+}
+
+class OpenWindow {
+    Window window
+    execute() : void
+}
+
+class CloseWindow {
+    Window window
+    execute() : void
+}
+
+class Agent {
+    List<Window> windowsActivities
+    addActivity(Activity) : void
+    startActivities() : void
+}
+
+Activity <|.. OpenWindow
+Activity <|.. CloseWindow
+
+Activity <- Agent
+
+@enduml

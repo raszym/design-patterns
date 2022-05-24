@@ -1,0 +1,16 @@
+@startuml
+abstract class behavioral.templatemethod.Test {
++ {abstract}void initializeData()
++ {abstract}void checkTest()
++ {abstract}void cleanData()
++ void run()
+}
+class behavioral.templatemethod.UserTest {
++ void initializeData()
++ void checkTest()
++ void cleanData()
+}
+
+
+behavioral.templatemethod.Test <|-- behavioral.templatemethod.UserTest
+@enduml

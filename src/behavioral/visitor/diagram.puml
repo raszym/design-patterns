@@ -1,0 +1,42 @@
+@startuml
+interface behavioral.visitor.BuildingType {
+~ void accept(Visitor)
+~ int getFloor()
+}
+class behavioral.visitor.Bungalow {
++ void accept(Visitor)
++ int getFloor()
+}
+class behavioral.visitor.Building {
+- List<BuildingType> buildings
++ void accept(Visitor)
++ int getFloor()
+}
+class behavioral.visitor.SkyScraper {
++ void accept(Visitor)
++ int getFloor()
+}
+class behavioral.visitor.OfficeBuilding {
++ void accept(Visitor)
++ int getFloor()
+}
+class behavioral.visitor.FloorVisitor {
++ void visit(Building)
++ void visit(Bungalow)
++ void visit(OfficeBuilding)
++ void visit(SkyScraper)
+}
+interface behavioral.visitor.Visitor {
+~ void visit(Building)
+~ void visit(Bungalow)
+~ void visit(OfficeBuilding)
+~ void visit(SkyScraper)
+}
+
+
+behavioral.visitor.BuildingType <|.. behavioral.visitor.Bungalow
+behavioral.visitor.BuildingType <|.. behavioral.visitor.Building
+behavioral.visitor.BuildingType <|.. behavioral.visitor.SkyScraper
+behavioral.visitor.BuildingType <|.. behavioral.visitor.OfficeBuilding
+behavioral.visitor.Visitor <|.. behavioral.visitor.FloorVisitor
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+
+class FlyweightRunner {
+    run() : void
+}
+
+class SpaceShip {
+    type : String
+    positionX : int
+    positionY : int
+    SpaceShip(String)
+    setPositionX(int) : void
+    setPositionY(int) : void
+    display() : void
+}
+
+class SpaceShipFactory {
+    spaceShipCache : Map<String, SpaceShip>
+    getSpaceShip(String) : SpaceShip
+    getCacheSize() : int
+}
+
+SpaceShip <- SpaceShipFactory
+FlyweightRunner --> SpaceShipFactory
+
+@enduml

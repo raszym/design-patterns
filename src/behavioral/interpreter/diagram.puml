@@ -1,0 +1,59 @@
+@startuml
+
+class Context {
+    romanNumber : String
+    arabicNumber : int
+    getRomanNumber() : String
+    setRomanNumber(String) : void
+    getArabicNumber() : String
+    setArabicNumber(String) : void
+}
+
+abstract class Interpreter {
+    calculate(Context) : void
+    one() : String
+    four() : String
+    five() : String
+    nine() : String
+    factor() : int
+}
+
+class ThousandInterpreter {
+    one() : String
+    four() : String
+    five() : String
+    nine() : String
+    factor() : int
+}
+
+class HundredInterpreter {
+    one() : String
+    four() : String
+    five() : String
+    nine() : String
+    factor() : int
+}
+
+class TenInterpreter {
+    one() : String
+    four() : String
+    five() : String
+    nine() : String
+    factor() : int
+}
+
+class OneInterpreter {
+    one() : String
+    four() : String
+    five() : String
+    nine() : String
+    factor() : int
+}
+
+Context -> Interpreter
+Interpreter <-- ThousandInterpreter
+Interpreter <-- HundredInterpreter
+Interpreter <-- TenInterpreter
+Interpreter <-- OneInterpreter
+
+@enduml

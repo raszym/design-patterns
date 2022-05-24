@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Helper {
+    nextHelper : Helper
+    setNext(Helper) : void
+    handle() : void
+}
+
+class FAQHelper {
+    nextHelper : Helper
+    errors : List<String>
+    setNext(Helper) : void
+    handle() : void
+}
+
+class ConsultantHelper {
+    nextHelper : Helper
+    errors : List<String>
+    setNext(Helper) : void
+    handle() : void
+}
+
+class ProgrammerHelper {
+    nextHelper : Helper
+    errors : List<String>
+    setNext(Helper) : void
+    handle() : void
+}
+
+class ChainOfResponsibilityRunner {
+    run() : void
+}
+
+Helper <|-- FAQHelper : Extends
+Helper <|-- ConsultantHelper : Extends
+Helper <|-- ProgrammerHelper : Extends
+
+Helper <- ChainOfResponsibilityRunner
+
+@enduml

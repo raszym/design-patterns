@@ -1,0 +1,36 @@
+@startuml
+class FacadeRunner {
+    run() : void
+}
+
+class OrderFacade {
+    bankAccount : BankAccount
+    database : Database
+    warehouse : Warehouse
+    parcelService : ParcelService
+    buy() : void
+}
+
+class BankAccount {
+    moneyTransfer() : void
+}
+
+class Database {
+    changeItemStatus() : void
+}
+
+class Warehouse {
+    packItem() : void
+}
+
+class ParcelService {
+    orderDelivery() : void
+}
+
+OrderFacade --> BankAccount
+OrderFacade --> Database
+OrderFacade --> Warehouse
+OrderFacade --> ParcelService
+
+FacadeRunner -> OrderFacade
+@enduml

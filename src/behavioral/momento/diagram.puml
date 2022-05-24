@@ -1,0 +1,25 @@
+@startuml
+class behavioral.momento.Notepad {
+- TextWindow textWindow
+- Momento momento
++ void writeText(String)
++ void save()
++ void undo()
++ void displayText()
+}
+class behavioral.momento.Momento {
+- String text
++ String getText()
+}
+class behavioral.momento.TextWindow {
+- StringBuilder text
++ StringBuilder getText()
++ void addText(String)
++ Momento save()
++ void rollback(Momento)
+}
+
+behavioral.momento.Notepad --> behavioral.momento.TextWindow
+behavioral.momento.Notepad --> behavioral.momento.Momento
+
+@enduml

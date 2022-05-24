@@ -1,0 +1,26 @@
+@startuml
+interface AmazonItem {
+    getPrice()
+}
+
+class GangOfFourBook {
+    getPrice()
+}
+
+interface Adapter {
+    convert()
+}
+
+class DollarAdapter {
+    convert()
+}
+
+class AdapterRunner {
+    run() : void
+}
+AdapterRunner --|> Adapter
+AmazonItem <|-- GangOfFourBook
+Adapter <|-- DollarAdapter
+AmazonItem <|. Adapter : Use
+
+@enduml

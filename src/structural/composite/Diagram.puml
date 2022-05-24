@@ -1,0 +1,18 @@
+@startuml
+
+class CompositeRunner {
+    run() : void
+}
+
+CompositeRunner -> Person
+
+class Person {
+    name : String
+    age : Integer
+    children : Person
+    add(Person) : void
+    remove(Person) : void
+    getChildren() : List<Person>
+}
+
+@enduml

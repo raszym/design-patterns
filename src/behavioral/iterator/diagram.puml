@@ -1,0 +1,19 @@
+@startuml
+interface behavioral.iterator.Player {
+~ Iterator<SampleIterator> getIterator()
+}
+class behavioral.iterator.SampleIterator {
+- List<String> samples
+- int index
++ boolean hasNext()
++ Object next()
+}
+class behavioral.iterator.MusicPlayer {
+- List<String> samples
++ Iterator<SampleIterator> getIterator()
+}
+
+
+java.util.Iterator <|.. behavioral.iterator.SampleIterator
+behavioral.iterator.Player <|.. behavioral.iterator.MusicPlayer
+@enduml

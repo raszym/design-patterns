@@ -1,0 +1,15 @@
+@startuml
+class behavioral.mediator.User {
+- String name
+- Mediator mediator
++ void recieve(String)
++ void send(String)
+}
+class behavioral.mediator.Mediator {
+~ List<User> users
++ void addUser(User)
++ void send(String,User)
+}
+
+behavioral.mediator.Mediator -> behavioral.mediator.User
+@enduml

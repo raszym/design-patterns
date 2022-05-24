@@ -1,0 +1,23 @@
+@startuml
+class behavioral.strategy.CsvConverter {
++ String convert(String)
+}
+interface behavioral.strategy.StrategyConverter {
+~ String convert(String)
+}
+class behavioral.strategy.PbConverter {
++ String convert(String)
+}
+class behavioral.strategy.Context {
+- StrategyConverter strategyConverter
++ String convert(String)
+}
+class behavioral.strategy.PdfConverter {
++ String convert(String)
+}
+
+
+behavioral.strategy.StrategyConverter <|.. behavioral.strategy.CsvConverter
+behavioral.strategy.StrategyConverter <|.. behavioral.strategy.PbConverter
+behavioral.strategy.StrategyConverter <|.. behavioral.strategy.PdfConverter
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+class behavioral.observer.Subscriber {
++ void update()
+}
+class behavioral.observer.Fanpage {
++ void update()
+}
+class behavioral.observer.YoutubeChannel {
+~ List<Observer> observers
+- String state
++ String getState()
++ void setState(String)
++ void addObserver(Observer)
+- void notifyAllObservers()
+}
+class behavioral.observer.TwitterAccount {
++ void update()
+}
+abstract class behavioral.observer.Observer {
+# YoutubeChannel youtubeChannel
++ {abstract}void update()
+}
+
+behavioral.observer.Observer <- behavioral.observer.YoutubeChannel
+
+behavioral.observer.Observer <|-- behavioral.observer.Subscriber
+behavioral.observer.Observer <|-- behavioral.observer.Fanpage
+behavioral.observer.Observer <|-- behavioral.observer.TwitterAccount
+@enduml
